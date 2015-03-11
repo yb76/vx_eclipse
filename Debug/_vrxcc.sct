@@ -1,0 +1,14 @@
+LOAD 0x70420040 {
+  CODE 0x70420040 {
+    *(.0_vrx_pgmhdr,+FIRST)
+    *(.1_vrx_libtbl)
+    *(.2_vrx_libend)
+    *(+RO)
+  }
+  DATA 0x70485000 {
+    *(+RW)
+  }
+  BSS +0 {
+    *(+ZI)
+  }
+}
